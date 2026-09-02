@@ -135,7 +135,7 @@ async function loadRooms() {
     const r = await fetch(`/api/technocore-rooms?t=${Date.now()}`, {cache:"no-store"});
     if (!r.ok) throw new Error();
     const body = await r.json();
-    const rooms = Array.isArray(body?.data) ? body.data : Array.isArray(body) ? body : [];
+    const rooms = Array.isArray(body?.data?.rooms) ? body.data.rooms : [];
     $("roomCount").textContent = rooms.length || "—";
     $("roomsList").innerHTML = rooms.length ? rooms.map(room => `
       <div class="room-row"><div><strong>${escapeHtml(room.name || room.room || "room")}</strong><div class="muted">${escapeHtml(room.topic || "No topic")}</div></div>
