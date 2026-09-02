@@ -1,3 +1,11 @@
+import dns from "node:dns";
+
+dns.setDefaultResultOrder("ipv4first");
+
+export const config = {
+  runtime: "nodejs"
+};
+
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store, max-age=0");
   res.setHeader("Access-Control-Allow-Origin", "*");
