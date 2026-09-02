@@ -142,7 +142,7 @@ async function loadRooms() {
       <div class="muted">seq ${escapeHtml(room.last_seq ?? "—")}</div></div>`).join("") : `<div class="empty">Room index unavailable.</div>`;
   } catch {
     $("roomCount").textContent = "—";
-    $("roomsList").innerHTML = `<div class="empty">Room index unavailable.</div>`;
+    $("roomsList").innerHTML = '<div class="empty">Room index unavailable.</div>';
   }
 }
 
